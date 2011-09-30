@@ -1,15 +1,14 @@
 <%%= form_for <%= item_path :instance_variable => true %> do |f| %>
 	<fieldset>
 	  <%% if <%= item_path :instance_variable => true %>.errors.any? %>
-	
 		<div class="alert-message block-message error">
 	        <a class="close" href="#">×</a>
-	        <p><strong><%%= pluralize(<%= item_path :instance_variable => true %>.errors.count, "error") %> prohibited this task from being saved:</strong></p>
-		      <ul>
-		      <%% <%= item_path :instance_variable => true %>.errors.messages.each do |msg| %>
-		        <li><%%= msg[1][0] %></li>
+	        <p><strong><%%= pluralize(<%= item_path :instance_variable => true %>.errors.count, "error") %> prohibited this <%= item_path %> from being saved:</strong></p>
+		 	<ul>
+		      <%% <%= item_path :instance_variable => true %>.errors.full_messages.each do |msg| %>
+		        <li><%%= msg %></li>
 		      <%% end %>
-		      </ul>
+		    </ul>
 	      </div>
 	  <%% end %>
 	<%- model_attributes.each do |attribute| -%>
@@ -21,7 +20,7 @@
 	  </div>
 	<%- end -%>
 	  <div class="actions">
-	    <%%= f.submit :class => "btn primary float-right"%>
+	    <%%= f.submit :class => "btn primary"%>
 	  </div>
 	<fieldset>
 <%% end %>
