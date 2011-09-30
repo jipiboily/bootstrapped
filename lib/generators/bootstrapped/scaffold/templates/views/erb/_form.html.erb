@@ -1,5 +1,17 @@
 <%%= form_for <%= item_path :instance_variable => true %> do |f| %>
 	<fieldset>
+	  <%% if <%= item_path :instance_variable => true %>.errors.any? %>
+	
+		<div class="alert-message block-message error">
+	        <a class="close" href="#">×</a>
+	        <p><strong><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</strong></p>
+		      <ul>
+		      <%% <%= item_path :instance_variable => true %>.errors.messages.each do |msg| %>
+		        <li><%%= msg[1][0] %></li>
+		      <%% end %>
+		      </ul>
+	      </div>
+	  <%% end %>
 	<%- model_attributes.each do |attribute| -%>
 	  <div class="clearfix">
 	    <%%= f.label :<%= attribute.name %> %>
