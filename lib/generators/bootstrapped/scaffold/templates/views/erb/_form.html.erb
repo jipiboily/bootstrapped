@@ -4,7 +4,7 @@
 	
 		<div class="alert-message block-message error">
 	        <a class="close" href="#">×</a>
-	        <p><strong><%= pluralize(<%= item_path :instance_variable => true %>.errors.count, "error") %> prohibited this task from being saved:</strong></p>
+	        <p><strong><%%= pluralize(<%= item_path :instance_variable => true %>.errors.count, "error") %> prohibited this task from being saved:</strong></p>
 		      <ul>
 		      <%% <%= item_path :instance_variable => true %>.errors.messages.each do |msg| %>
 		        <li><%%= msg[1][0] %></li>
