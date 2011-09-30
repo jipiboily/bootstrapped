@@ -12,7 +12,7 @@
 	      </div>
 	  <%% end %>
 	<%- model_attributes.each do |attribute| -%>
-	  <div class="clearfix">
+	  <div class="clearfix form_field">
 	    <%%= f.label :<%= attribute.name %> %>
 	    <div class="input">
 	      <%%= f.<%= attribute.field_type %> :<%= attribute.name %>, :class => "xxlarge" %>
